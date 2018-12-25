@@ -16,18 +16,20 @@
   make:
     chdir: "{{ git_crypt_clone_path }}"
     target: install
+    params:
+      PREFIX: "{{ git_crypt_home }}"
   become: true
 
 - name: Check current version.
-  command: "{{ git_crypt_path }} --version"
+  command: git-crypt --version
   register: git_crypt_current_version
   changed_when: false
   failed_when: false
 
-- name: Delete existing version if it is different.
-  file:
-    path: "{{ git_crypt_path }}"
-    state: absent
-  when: >
-    git_crypt_current_version.stdout is defined
-    and git_crypt_version not in git_crypt_current_version.stdout
+#- name: Delete existing version if it is different.
+#  file:
+#    path: "{{ git_crypt_home }}"
+#    state: absent
+#  when: >
+#    git_crypt_current_version.stdout is defined
+#    and git_crypt_version not in git_crypt_current_version.stdout
