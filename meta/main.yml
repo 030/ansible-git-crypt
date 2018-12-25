@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: "030"
   description: Git-encrypt
@@ -13,4 +14,3 @@ galaxy_info:
     - encrypt
 
 dependencies: []
-

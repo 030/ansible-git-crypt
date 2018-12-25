@@ -2,7 +2,7 @@
 - include: RedHat.yml
   when: ansible_os_family == "RedHat"
 
-- name: Git clone 
+- name: Git clone
   git:
     repo: http://github.com/AGWA/git-crypt.git
     dest: "{{ git_crypt_clone_path }}"
@@ -16,7 +16,7 @@
   make:
     chdir: "{{ git_crypt_clone_path }}"
     target: install
-  become: yes
+  become: true
 
 - name: Check current version.
   command: "{{ git_crypt_path }} --version"
@@ -31,4 +31,3 @@
   when: >
     git_crypt_current_version.stdout is defined
     and git_crypt_version not in git_crypt_current_version.stdout
-
