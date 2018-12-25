@@ -1,2 +1,3 @@
 ---
-# vars file for ansible-git-crypt
+git_crypt_clone_path: /tmp/git-crypt
+

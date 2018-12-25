@@ -1,4 +1,23 @@
 ---
+- include: RedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Git clone 
+  git:
+    repo: http://github.com/AGWA/git-crypt.git
+    dest: "{{ git_crypt_clone_path }}"
+    version: "{{ git_crypt_version }}"
+
+- name: Build
+  make:
+    chdir: "{{ git_crypt_clone_path }}"
+
+- name: Install
+  make:
+    chdir: "{{ git_crypt_clone_path }}"
+    target: install
+  become: yes
+
 - name: Check current version.
   command: "{{ git_crypt_path }} --version"
   register: git_crypt_current_version
