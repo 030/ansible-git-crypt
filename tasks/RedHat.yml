@@ -3,5 +3,6 @@
   yum:
     name:
       - gcc-c++
+      - git
       - openssl-devel
       - openssl
