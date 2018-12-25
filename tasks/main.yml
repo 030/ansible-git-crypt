@@ -12,3 +12,4 @@
   when: >
     git_crypt_current_version.stdout is defined
     and git_crypt_version not in git_crypt_current_version.stdout
+
