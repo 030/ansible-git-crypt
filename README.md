@@ -1,7 +1,10 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/030/ansible-git-crypt.svg?branch=master)](https://travis-ci.org/030/ansible-git-crypt)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/29226.svg)](https://galaxy.ansible.com/030/ansible_firefox)
+
+Install the latest [Git-crypt](https://github.com/AGWA/git-crypt).
 
 Requirements
 ------------
