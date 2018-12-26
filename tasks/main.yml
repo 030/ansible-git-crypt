@@ -11,8 +11,12 @@
 - block:
   - name: Delete existing version if it is different.
     file:
-      path: "{{ git_crypt_home }}"
+      path: "{{ item }}"
       state: absent
+    become: true
+    with_items:
+      - "{{ git_crypt_clone_path }}"
+      - "{{ git_crypt_path }}"
 
   - name: Git clone
     git:
@@ -32,5 +36,6 @@
         PREFIX: "{{ git_crypt_home }}"
     become: true
   when: >
-    git_crypt_current_version.stdout is defined
-    and git_crypt_version not in git_crypt_current_version.stdout
+    git_crypt_current_version.msg is defined
+    or git_crypt_current_version.stderr is defined
+    and git_crypt_version not in git_crypt_current_version.stderr
