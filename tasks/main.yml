@@ -13,17 +13,17 @@
     file:
       path: "{{ git_crypt_home }}"
       state: absent
- 
+
   - name: Git clone
     git:
       repo: http://github.com/AGWA/git-crypt.git
       dest: "{{ git_crypt_clone_path }}"
       version: "{{ git_crypt_version }}"
-  
+
   - name: Build
     make:
       chdir: "{{ git_crypt_clone_path }}"
-  
+
   - name: Install
     make:
       chdir: "{{ git_crypt_clone_path }}"
