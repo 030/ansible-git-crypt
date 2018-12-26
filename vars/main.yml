@@ -1,3 +1,4 @@
 ---
 git_crypt_clone_path: /tmp/git-crypt
 git_crypt_home: /usr/local
+git_crypt_path: "{{ git_crypt_home }}/bin/git-crypt"
