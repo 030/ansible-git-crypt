@@ -3,7 +3,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: Check current version.
-  command: git-crypt --version
+  command: "{{ git_crypt_path }} --version"
   register: git_crypt_current_version
   changed_when: false
   failed_when: false
