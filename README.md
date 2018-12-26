@@ -2,7 +2,7 @@ Role Name
 =========
 
 [![Build Status](https://travis-ci.org/030/ansible-git-crypt.svg?branch=master)](https://travis-ci.org/030/ansible-git-crypt)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/29226.svg)](https://galaxy.ansible.com/030/ansible_firefox)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/35844.svg)](https://galaxy.ansible.com/030/ansible_firefox)
 
 Install the latest [Git-crypt](https://github.com/AGWA/git-crypt).
 
